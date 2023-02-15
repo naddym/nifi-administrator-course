@@ -1,0 +1,22 @@
+{
+  "days" : 825,
+  "keySize" : 2048,
+  "keyPairAlgorithm" : "RSA",
+  "signingAlgorithm" : "SHA256WITHRSA",
+  "dn" : "CN=node-1,OU=NIFI",
+  "keyStore" : "keystore.jks",
+  "keyStoreType" : "jks",
+  "keyStorePassword" : "eU5dA1mkmicAi6LaUgj6BiiXpHoh2l3EZ2SId5EmNCM",
+  "keyPassword" : "eU5dA1mkmicAi6LaUgj6BiiXpHoh2l3EZ2SId5EmNCM",
+  "token" : "mytokenfornificourse",
+  "caHostname" : "ca-server-node",
+  "port" : 9999,
+  "dnPrefix" : "CN=",
+  "dnSuffix" : ", OU=NIFI",
+  "reorderDn" : true,
+  "additionalCACertificate" : "",
+  "domainAlternativeNames" : [ "localhost", "node-1" ],
+  "trustStore" : "truststore.jks",
+  "trustStorePassword" : "N0JKy78/Uv971N3T0WMIDxOFqea9QL7LEtHJOKIvWJk",
+  "trustStoreType" : "jks"
+}

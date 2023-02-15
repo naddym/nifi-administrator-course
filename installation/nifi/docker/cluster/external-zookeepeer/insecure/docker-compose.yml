@@ -1,0 +1,37 @@
+version: '3'
+services:
+  zoo-node:
+    image: zookeeper:3.6.2
+    container_name: zoo-node
+    hostname: zoo-node
+    ports:
+      - '2181'
+    environment:
+      ZOO_MY_ID: 1
+      ZOO_SERVERS: server.1=zoo-node:2888:3888;2181
+  nifi-1:
+    image: apache/nifi:1.15.3
+    container_name: nifi-1
+    ports:
+      - '8080:8080'
+    environment:
+      NIFI_WEB_HTTP_PORT: 8080
+      NIFI_WEB_HTTP_HOST: nifi-1
+      NIFI_SENSITIVE_PROPS_KEY: awesome_nifi
+      NIFI_ZK_CONNECT_STRING: zoo-node:2181
+      NIFI_CLUSTER_IS_NODE: 'true'
+      NIFI_CLUSTER_NODE_PROTOCOL_PORT: 9998
+      NIFI_ELECTION_MAX_WAIT: 1 min
+  nifi-2:
+    image: apache/nifi:1.15.3
+    container_name: nifi-2
+    ports:
+      - '8081:8080'
+    environment:
+      NIFI_WEB_HTTP_PORT: 8080
+      NIFI_WEB_HTTP_HOST: nifi-2
+      NIFI_SENSITIVE_PROPS_KEY: awesome_nifi
+      NIFI_ZK_CONNECT_STRING: zoo-node:2181
+      NIFI_CLUSTER_IS_NODE: 'true'
+      NIFI_CLUSTER_NODE_PROTOCOL_PORT: 9998
+      NIFI_ELECTION_MAX_WAIT: 1 min
