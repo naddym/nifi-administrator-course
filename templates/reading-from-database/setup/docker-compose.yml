@@ -1,0 +1,25 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+
+
+
+# # Creating table
+# CREATE TABLE EMPLOYEE (
+#   ID INT PRIMARY KEY NOT NULL,
+#   NAME VARCHAR(50) NOT NULL,
+#   COMPANY VARCHAR(50) NOT NULL
+# );
+
+# # Inserting into table
+# INSERT INTO EMPLOYEE (ID, NAME, COMPANY) VALUES (1, 'John', 'Apache');
+# INSERT INTO EMPLOYEE (ID, NAME, COMPANY) VALUES (2, 'Simon', 'NiFi');
+# INSERT INTO EMPLOYEE (ID, NAME, COMPANY) VALUES (3, 'Mark', 'Apache');

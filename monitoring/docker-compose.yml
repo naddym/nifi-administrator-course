@@ -1,0 +1,23 @@
+version: '3'
+services:
+  nifi:
+    image: apache/nifi:1.21.0
+    container_name: nifi
+    ports:
+      - '8080:8080'
+    environment:
+      NIFI_WEB_HTTP_PORT: 8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    ports:
+      - '9090:9090'
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+  grafana:
+    image: grafana/grafana-oss:8.5.0
+    container_name: grafana
+    ports:
+      - '3000:3000'

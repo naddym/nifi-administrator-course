@@ -1,0 +1,22 @@
+{
+  "days" : 825,
+  "keySize" : 2048,
+  "keyPairAlgorithm" : "RSA",
+  "signingAlgorithm" : "SHA256WITHRSA",
+  "dn" : "CN=nadeem,OU=NIFI",
+  "keyStore" : "keystore.pkcs12",
+  "keyStoreType" : "PKCS12",
+  "keyStorePassword" : "Sg5RrQbmlr6/2FK4lvg8M9hOOcMHJ5qbJa66p6yjKLc",
+  "keyPassword" : null,
+  "token" : "mytokenfornificourse",
+  "caHostname" : "ca-server-node",
+  "port" : 9999,
+  "dnPrefix" : "CN=",
+  "dnSuffix" : ", OU=NIFI",
+  "reorderDn" : true,
+  "additionalCACertificate" : "",
+  "domainAlternativeNames" : [ ],
+  "trustStore" : "truststore.jks",
+  "trustStorePassword" : "O9qdUZ4IqncnPTR3651lmOhzGaDCj5WUe25TAkmO29Q",
+  "trustStoreType" : "jks"
+}

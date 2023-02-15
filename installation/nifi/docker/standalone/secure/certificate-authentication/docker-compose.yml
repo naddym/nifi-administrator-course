@@ -1,0 +1,25 @@
+version: '3'
+services:
+  node-1:
+    image: nads95/nifi:1.14.0
+    container_name: node-1
+    ports:
+      - "8443:8443"
+    environment:
+      NIFI_WEB_HTTPS_PORT: 8443
+      NIFI_WEB_HTTPS_HOST: node-1
+      NIFI_SENSITIVE_PROPS_KEY: awesome_nifi
+      AUTH: tls
+      KEYSTORE_PATH: /opt/nifi/nifi-current/certs/keystore.jks
+      KEYSTORE_TYPE: jks
+      KEYSTORE_PASSWORD: eU5dA1mkmicAi6LaUgj6BiiXpHoh2l3EZ2SId5EmNCM
+      KEY_PASSWORD: eU5dA1mkmicAi6LaUgj6BiiXpHoh2l3EZ2SId5EmNCM
+      TRUSTSTORE_PATH: /opt/nifi/nifi-current/certs/truststore.jks
+      TRUSTSTORE_PASSWORD: N0JKy78/Uv971N3T0WMIDxOFqea9QL7LEtHJOKIvWJk
+      TRUSTSTORE_TYPE: jks
+      NIFI_AUTHORIZER_CONF_FILE: /opt/nifi/nifi-current/authorizers.xml
+      NIFI_SECURITY_USER_AUTHORIZER: managed-authorizer
+      INITIAL_ADMIN_IDENTITY: 'CN=nadeem, OU=NIFI'
+    volumes:
+      - ./node-1/certs:/opt/nifi/nifi-current/certs
+      - ./authorizers.xml:/opt/nifi/nifi-current/authorizers.xml
